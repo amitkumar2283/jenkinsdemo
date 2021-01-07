@@ -1,6 +1,7 @@
 pipeline {
   agent any
   stages{
+    stage('parallel execution'){
     parallel{
       stage ('compile'){
        steps{
@@ -14,6 +15,7 @@ pipeline {
         echo "more testing.."
        }
      }
+    }
     }
     stage ('Deploy'){
      steps{
