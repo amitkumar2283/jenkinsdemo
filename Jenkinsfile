@@ -4,12 +4,14 @@ pipeline {
     stage('parallel execution'){
     parallel{
       stage ('compile'){
+       agent {  label 'node1'}
        steps{
         echo "Compiling..."
         echo "more compilation.."
        }
      }
      stage ('test'){
+       agent {  label 'master'}
        steps{
         echo "testing..."
         echo "more testing.."
